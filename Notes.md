@@ -26,11 +26,31 @@ $$
 
  - $a$ is the number of subproblem in the recursion
 
- - $f(n)​$ is the time to create the subproblems and combine their results in the above procedure
+ - $f(n)$ is the time to create the subproblems and combine their results in the above procedure
 
    Let $c_{crit}=log_{b}a$ ,
 
-   If $f(n) = \Theta(n^{c}) where c < c_{crit}$
+   If $f(n) = \Theta(n^{c})\quad where\ c < c_{crit}$
+
+
+
+- **RNN**
+
+- GRU
+
+  An update gate, a reset gate.
+
+  If reset is close to 0, ignore previous hidden state.
+
+  Update gate z controls how much of past state should matter now.
+
+
+
+
+
+- 
+
+
 
 
 
