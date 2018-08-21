@@ -71,6 +71,10 @@ def quicksort(arr):
     return quicksort(left) + middle + quicksort(right)
 ```
 
+#### *Inverse dict*
 
-
+```python
+def inverse_dict(dict):
+    return {v:k for k,v in dict}
+```
 
