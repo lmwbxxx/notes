@@ -1,10 +1,14 @@
-## **Notes**
+[TOC]
 
 
 
-## **Concepts**
+# **Notes**
 
-- #### P vs NP
+
+
+# **Concepts**
+
+### *P vs NP*
 
 **P** = Problems with Efficient Algorithms for *Finding* Solutions
 
@@ -12,11 +16,11 @@
 
 **NP-complete**: partition
 
-**NP-hard**(at least as hard as the hardest problems in NP): TSP, "Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the origin city?"
+**NP-hard** (at least as hard as the hardest problems in NP): TSP, "Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city and returns to the origin city?"
 
 
 
-- #### Master Theorem
+### *Master Theorem*
 
 $$
 T(n) = a\ T(\frac{n}{b}) + f(n)
@@ -34,7 +38,7 @@ $$
 
 
 
-- **RNN**
+### *RNN*
 
 - GRU
 
@@ -48,16 +52,20 @@ $$
 
 
 
-- 
+- LSTM
 
 
 
 
 
 
-## **Some Code**
+# **Some Code**
 
-#### *Quick sort*
+
+
+## Algorithms
+
+### Quick sort
 
 ```python
 # Quick sort
@@ -71,10 +79,51 @@ def quicksort(arr):
     return quicksort(left) + middle + quicksort(right)
 ```
 
-#### *Inverse dict*
+### *Zip*
+
+```python
+def zip(*iterables):
+    # zip('ABCD', 'xy') --> Ax By
+    sentinel = object()
+    iterators = [iter(it) for it in iterables]
+    while iterators:
+        result = []
+        for it in iterators:
+            elem = next(it, sentinel)
+            if elem is sentinel:
+                return
+            result.append(elem)
+        yield tuple(result)
+```
+
+```python
+>>> x = [1, 2, 3]
+>>> y = [4, 5, 6]
+>>> zipped = zip(x, y)
+>>> list(zipped)
+[(1, 4), (2, 5), (3, 6)]
+>>> x2, y2 = zip(*zip(x, y))
+>>> x == list(x2) and y == list(y2)
+True
+```
+
+
+
+
+
+## Tricks
+
+### Word to id
+
+```python
+word_to_id = dict(zip(words, range(len(words))))
+```
+
+### *Inverse dict*
 
 ```python
 def inverse_dict(dict):
     return {v:k for k,v in dict}
 ```
 
+### 
